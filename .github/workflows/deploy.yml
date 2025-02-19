@@ -23,10 +23,10 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
        # with:
          # path: ./  # Deploy the root folder
         with:
             path: Bootstrap/
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
