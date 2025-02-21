@@ -27,6 +27,6 @@ jobs:
        # with:
          # path: ./  # Deploy the root folder
         with:
-            path: Bootstrap/
+            path: HTML-Bootstrap/
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
