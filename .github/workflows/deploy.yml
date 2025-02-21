@@ -16,17 +16,16 @@ jobs:
       - name: Install Dependencies
         run: npm install || echo "No dependencies to install"
 
-     # - name: Compile SCSS to CSS (if applicable)
-      #  run: npm run build-css || echo "No SCSS compilation needed"
+      # - name: Compile SCSS to CSS (if applicable)
+      #   run: npm run build-css || echo "No SCSS compilation needed"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v4
-       # with:
-         # path: ./  # Deploy the root folder
         with:
-            path: HTML-Bootstrap/
+          path: ./HTML-Bootstrap/  # Ensure the correct path to the build directory
+
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
