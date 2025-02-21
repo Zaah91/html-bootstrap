@@ -1,20 +1,20 @@
-name: Deploy Bootstrap Project
+name: CI/CD Pipeline
 
 on:
-  push:
-    branches:
-      - main  # Use main branch instead of gh-pages
+push:
+branches:
+- main
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+build-and-deploy:
+runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+steps:
+- name: Checkout Repository
+uses: actions/checkout@v3
 
-      - name: Install Dependencies
-        run: npm install || echo "No dependencies to install"
+- name: Install Dependencies
+run: npm install || echo "No dependencies to install"
 
      # - name: Compile SCSS to CSS (if applicable)
       #  run: npm run build-css || echo "No SCSS compilation needed"
@@ -23,7 +23,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
        # with:
          # path: ./  # Deploy the root folder
         with:
